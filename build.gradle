@@ -15,13 +15,23 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
 	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 
 	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+	// https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.5'
+
+	//JWT
+// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
+	compile group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.10.7'
+
+	runtimeOnly "io.jsonwebtoken:jjwt-impl:0.10.7"
+	runtimeOnly "io.jsonwebtoken:jjwt-jackson:0.10.7"
 
 
 	implementation 'org.flywaydb:flyway-core'
