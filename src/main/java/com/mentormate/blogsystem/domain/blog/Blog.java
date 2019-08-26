@@ -5,10 +5,7 @@ import com.mentormate.blogsystem.domain.user.User;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,7 +22,10 @@ public class Blog extends BaseEntity {
     @ManyToOne
     private User createdBy;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Comment> comments = new HashSet<>();
 
+    public void addComment(Comment comment){
+        comments.add(comment);
+    }
 }
