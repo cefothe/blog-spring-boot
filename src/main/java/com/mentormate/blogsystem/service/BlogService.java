@@ -31,4 +31,9 @@ public class BlogService {
                 .map(blog -> modelMapper.map(blog, BlogDTO.class))
                 .collect(Collectors.toList());
     }
+
+    public BlogDTO getById(Long id) {
+        var blog = blogRepository.getOne(id);
+        return modelMapper.map(blog, BlogDTO.class);
+    }
 }

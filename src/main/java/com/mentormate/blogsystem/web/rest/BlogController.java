@@ -5,6 +5,7 @@ import com.mentormate.blogsystem.service.BlogService;
 import com.mentormate.blogsystem.service.dto.BlogDTO;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RequestMapping("/api/v1/blog")
@@ -25,5 +26,10 @@ public class BlogController {
     @GetMapping
     public List<BlogDTO> getAll(){
         return blogService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public BlogDTO getById(@PathParam("id") Long id){
+        return blogService.getById(id);
     }
 }
